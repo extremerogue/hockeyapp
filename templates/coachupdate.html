@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Update Coach{% endblock %}
+
+{% block content %}
+    <div class="container">
+     <h1>Update Coach...</h1>
+    <br/>
+    <form action="/coachupdate/{{coach_to_update.id}}" METHOD="POST">
+        <input type="text" placeholder="Name" name="name" value="{{coach_to_update.name}}">
+        <input type="submit" value="Update Name" class="btn btn-secondary">
+    </form>
+    <br/><br/>
+
+
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}{{title}}{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+     <h1>Manage Coaches</h1>
+    <br/>
+    <form action="/coaches" METHOD="POST">
+        <input type="text" placeholder="Name" name="name">
+        <input type="submit" value="Add Name" class="btn btn-secondary">
+    </form>
+    <br/><br/>
+
+<!-- We need to add logic to assign a newly added coach to a team -->
+
+    {% for coach in coaches %}
+        <h4>
+            {{coach.name}}
+            <a href="/coachupdate/{{coach.id}}" class="btn btn-outline-secondary btn-sm">Update</a>
+            <a href="/coachdelete/{{coach.id}}" class="btn btn-outline-danger btn-sm">Delete</a>
+        </h4>
+    {% endfor %}
+
+    </div>
+{% endblock %}

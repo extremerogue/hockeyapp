@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Update Practice{% endblock %}
+
+{% block content %}
+    <div class="container">
+     <h1>Update Practice...</h1>
+    <br/>
+    <form action="/practiceupdate/{{practice_to_update.id}}" METHOD="POST">
+        <input type="text" placeholder="Name" name="name" value="{{practice_to_update.name}}">
+        <input type="submit" value="Update This Practice" class="btn btn-secondary">
+    </form>
+    <br/><br/>
+
+
+    </div>
+{% endblock %}

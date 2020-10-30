@@ -2,20 +2,17 @@
 
 {% block content %}
     <div class="container">
-     <h1>This page is really about me...not really you!</h1>
-     <ul>
-     <p>
-         {% for name in names %}
+     <h1>Welcome to Hockey Practice Manager</h1>
+    
+     <h4>
+         This app is for Seattle Junior Hockey Association (SJHA) coaches to organizes their practices and make sure
+         coaches and assistant coaches know their assinged areas and stations before each pracitce.
 
-            {% if name == 'Wes' %}
-                <li>Wes is The Best!!!</li>
-            {% else %}
-                <li>{{name}}</li>
-            {% endif %}
+        <br>
+        <br>
+         If you have suggestions, please send them to david.tijerina@protonmail.com
 
-         {% endfor %}
-
-     </ul>
-     </p>
+   
+     </h4>
     </div>
 {% endblock %}

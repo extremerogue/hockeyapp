@@ -1,10 +1,45 @@
 {% extends 'base.html' %}
-{% block title %} Website of Dreams {% endblock %}
+{% block title %} HockeyPractice {% endblock %}
+
+
 {% block content %}
-    <div class="container">
-     <h1>Hello, lost world!</h1>
-        <br/><br/>
-        <img src="{{ url_for('static',filename='images/pic.jpg')}}" width="100">
+  <div class="container">
+     <h1>Coach & Station Assignments</h1>
+    <br/>
+    <br/>
+    <br/>
+    <h1>Teams</h1> 
+         {% for team in teams %}
+         <h2>{{team.name}}</h2>
+        
+         	{% for practice in practices %}
+
+         		{% if team.id == practice.team_id %}
+         			<h4>&nbsp&nbsp&nbsp&nbsp Practice: {{practice.name}}</h4> 
+
+         				{% for station in stations %}
+
+         					{% if practice.id == station.practice_id %}
+	         					
+	         					<h5>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Station: {{station.name}} : {{station.coach_name}}</h5>
+	         					
+
+	         				{% endif %}
+
+	         			{% endfor %}
+	         		
+	         	{% endif %}
+
+         
+
+         	{% endfor %}		
+
+         
+         </br>
+         {% endfor %}
+
+    
 
     </div>
 {% endblock %}
+

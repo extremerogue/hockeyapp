@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Manage Team{% endblock %}
+
+{% block content %}
+    <div class="container">
+     <h1>{{team.name}}</h1>
+     <h4>
+            <a href="/teamupdate/{{team.id}}" class="btn btn-outline-secondary btn-sm">Rename Team</a>
+            <a href="/teamdelete/{{team.id}}" class="btn btn-outline-danger btn-sm">Delete Team</a>
+        </h4>
+    <br/>
+       
+    <br/><br/>
+
+       
+    <h2>Coaches</h2> 
+         {% for coach in coaches %}
+         <h4>
+              {{coach.name}}
+              <a href="/coachupdate/{{coach.id}}" class="btn btn-outline-secondary btn-sm">Update</a>
+              <a href="/coachdelete/{{coach.id}}" class="btn btn-outline-danger btn-sm">Delete</a>
+         </h4>
+         {% endfor %}
+         <br/>
+         <form action="/coachadd/{{team.id}}" METHOD="POST">
+           <input type="text" placeholder="coach name" name="name">
+           <input type="submit" value="Add Coach to Team" class="btn btn-secondary">
+           <br/>
+           <p style="color:red;">{{coach_error}}</p>
+         </form>
+         <br/>
+         <br/>
+
+
+    <h2>Practices</h2> 
+         {% for practice in practices %}
+         <h4>
+              {{practice.name}}
+              <a href="/managepractice/{{team.id}}/{{practice.id}}" class="btn btn-outline-secondary btn-sm">Manage Practice</a>
+         </h4>
+        {% endfor %}
+         <br/>
+         <form action="/practiceadd/{{team.id}}" METHOD="POST">
+           <input type="text" placeholder="practice session" name="name">
+           <input type="submit" value="Add Practice Session to Team" class="btn btn-secondary">
+           <br/>
+           <p style="color:red;">{{practice_error}}</p>
+         </form>
+
+
+    </div>
+{% endblock %}

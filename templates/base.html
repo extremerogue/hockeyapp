@@ -21,24 +21,21 @@
   <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="{{ url_for('index')}} ">KageHoward</a>
+  <a class="navbar-brand" href="{{ url_for('index')}} ">SJHA</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="{{ url_for('index')}} ">Home <span class="sr-only">(current)</span></a>
+
+           
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('teams')}}">Teams</a>
       </li>
+      
       <li class="nav-item">
         <a class="nav-link" href="{{ url_for('about')}}">About</a>  <!-- point to the 'about' fuction in app.py -->
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('subscribe')}}">Subscribe</a>  <!-- point to the 'subscribe' fuction in app.py -->
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('friends')}}">Friends</a>  <!-- point to the 'subscribe' fuction in app.py -->
       </li>
 
     </ul>

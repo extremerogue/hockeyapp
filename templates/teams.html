@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}{{title}}{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+     <h1>SJHA - Teams Manager </h1>
+    <br/>
+    <form action="/teams" METHOD="POST">
+        <input type="text" placeholder="team name" name="name">
+        <input type="submit" value="Add Team" class="btn btn-secondary">
+        <br/>
+        <p style="color:red;">{{error_string}}</p>
+    <br/><br/>
+
+
+    {% for team in teams %}
+        <h4>
+            {{team.name}}
+            <a href="/manageteam/{{team.id}}" class="btn btn-outline-secondary btn-sm">Manage Team</a>
+        </h4>
+        </br/>
+    {% endfor %}
+
+    </div>
+{% endblock %}
